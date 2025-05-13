@@ -1,0 +1,231 @@
+/* styles.css */
+/* ベースフォントと色設定 */
+body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* カラー定義 */
+.main-color { color: #0063B1; }
+.accent-color { color: #FF6B00; }
+.bg-main { background-color: #0063B1; }
+.bg-accent { background-color: #FF6B00; }
+.bg-light-blue { background-color: #EBF5FF; }
+.bg-light-gray { background-color: #F7F9FB; }
+
+/* ボタンスタイル */
+.btn-primary {
+    background-color: #FF6B00;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-primary:hover {
+    background-color: #E65A00;  /* ホバー時の色 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* コンテナの最大幅と余白 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* セクションタイトル下線デザインを色付きテキスト部分だけに適用 */
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+.section-title .underline-accent {
+    display: inline-block;
+    position: relative;
+}
+.section-title .underline-accent::after {
+    content: '';
+    display: block;
+    height: 4px;
+    background-color: #0063B1;
+    border-radius: 2px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0.2em;
+}
+
+/* セクションタイトルの親要素で中央寄せ */
+.section-title-wrapper {
+    text-align: center;
+}
+
+/* チェックマークのスタイル */
+.check-mark { color: #FF6B00; margin-right: 0.5rem; }
+
+/* ステップボックス */
+.step-box {
+    border: 2px solid #0063B1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: white;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: #0063B1;
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+}
+
+/* カード共通 */
+.testimonial-card,
+.solution-card {
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.solution-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* FAQ */
+.faq-item { margin-bottom: 1.5rem; }
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #F7F9FB;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-answer {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 0.25rem;
+}
+
+/* フォーム */
+.form-group { margin-bottom: 1.5rem; }
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 2.5px solid #7a869a; /* さらに太く、より濃いグレー */
+    border-radius: 4px;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+.form-control:focus {
+    outline: none;
+    border-color: #FF6B00; /* アクセントカラー */
+    box-shadow: 0 0 0 2px #ffe1d1;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .btn-primary {
+        display: block;
+        width: 100%;
+    }
+    .container {
+        padding: 0 0.5rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-label {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    .form-control {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+    .grid-cols-1, .md\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .testimonial-card, .solution-card {
+        padding: 1rem;
+        font-size: 0.98rem;
+    }
+    .step-box {
+        padding: 1rem;
+        font-size: 0.98rem;
+    }
+    .faq-question, .faq-answer {
+        padding: 0.7rem;
+        font-size: 0.98rem;
+    }
+    .bg-light-blue, .bg-light-gray {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .rounded-lg, .rounded-xl {
+        border-radius: 8px;
+    }
+    .shadow-md, .shadow-sm {
+        box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    }
+    .w-32, .md\:w-40, .h-32, .md\:h-40 {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .text-2xl, .md\:text-3xl {
+        font-size: 1.3rem !important;
+    }
+    .text-xl, .md\:text-2xl {
+        font-size: 1.1rem !important;
+    }
+    .text-lg, .md\:text-xl {
+        font-size: 1rem !important;
+    }
+    .py-12, .md\:py-12 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .py-8, .md\:py-8 {
+        padding-top: 1.2rem !important;
+        padding-bottom: 1.2rem !important;
+    }
+    .mb-8, .md\:mb-8 {
+        margin-bottom: 1.2rem !important;
+    }
+    .mb-6, .md\:mb-6 {
+        margin-bottom: 1rem !important;
+    }
+    .gap-4, .md\:gap-8 {
+        gap: 1rem !important;
+    }
+}
